@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="bools==false">
     <table class="table table-striped table-hover table-dark">
       <thead>
         <tr>
