@@ -1,0 +1,77 @@
+console.log("*888888888888888888888888888888888888888888*");
+console.log(
+  flight.departureDateTime.time +
+    " " +
+    flight.departureDateTime.date
+);
+
+
+
+console.log(
+            airName+" "+
+            depCode +
+              " " +
+              depTime +
+              " " +
+              duration +
+              " " +
+              arrCode +
+              " " +
+              arrTime +
+              " " +
+              price +
+              " " +
+              airCode
+          );
+
+
+
+
+
+
+
+          <li>  {{ flight[0][0] }}<br />{{ flight[0][1] }}
+            <hr />
+            {{ flight[1][0] }}<br />{{ flight[1][1] }}
+            </li>
+            <li>{{ flight[0][2] }}<br />{{ flight[0][3] }}<br />{{ flight[0][4] }}
+            <hr />
+            {{ flight[1][6] }}<br />{{ flight[1][7] }}<br />{{ flight[1][8] }}
+            </li>
+            <li>
+            {{ flight[0][5] }}
+            <hr />
+            {{ flight[1][5] }}
+            </li>
+            <li>
+            {{ flight[0][6] }}<br />{{ flight[0][7] }}<br />{{ flight[0][8] }}
+            <hr />
+            {{ flight[1][2] }}<br />{{ flight[1][3] }}<br />{{ flight[1][4] }}
+            </li>
+            <li>
+            {{ flight[0][9] }}
+            <hr />
+            {{ flight[1][9] }}
+            </li>
+
+
+            console.log(body);
+        let arr = JSON.parse(body);
+        let countr = arr.location.country;
+        let cit = arr.location.name;
+        if (
+          this.to.toLowerCase() == countr.toLowerCase() ||
+          this.to.toLowerCase() == cit.toLowerCase()
+        ) {
+          document.getElementById("weather_city").innerHTML=`Weather for <b>${this.destination}</b>`;
+          document.getElementById("weather").innerHTML=`${arr.current.temp_c} ℃ <br> ${arr.current.temp_f} ℉ 
+                                                          <br> ${arr.current.condition.text} <br> <img src="${arr.current.condition.icon}"/>`;
+        }
+
+
+
+
+
+
+
+            c28178a9510abc97b15ba9993cf8e9c7
