@@ -30,9 +30,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ~ User friendly,attractive and useful features like sorting with price,arrival time,departure time or duration can be done by a simple click. <br>
 ~ User can easily find round trip flight information with in a budget price. <br>
 ~ User can select date of their choice. <br>
-~ User can be informed about the destination weather before their travel. <br>
+~ User can be informed about the destination <b>Current Weather</b> before their travel. <br>
 
 #### Not Included:
 
-~ Hourly weather forecast API not found and therefore not included. <br>
+~ Hourly weather forecast API not found and therefore not included instead Current Weather is addded.<br>
 
