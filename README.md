@@ -36,3 +36,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ~ Hourly weather forecast API not found and therefore not included instead Current Weather is addded.<br>
 
+
+## Preview
+
+![Preview](https://i.ibb.co/4sRSh8s/Flight-Book.png)
