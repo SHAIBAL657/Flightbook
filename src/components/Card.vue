@@ -113,7 +113,20 @@
         <p id="weather_city"></p>
       </div>
       <div class="card-body">
-        <p class="card-text" id="weather"></p>
+        <div class="card-text row text-center">
+          <div class="col d-box text-center p-4">
+            <p class="card-text" id="weather_morning"></p>
+          </div>
+          <div class="col d-box text-center p-4">
+            <p class="card-text" id="weather_afternoon"></p>
+          </div>
+          <div class="col d-box text-center p-4">
+            <p class="card-text" id="weather_evening"></p>
+          </div>
+          <div class="col d-box text-center p-4">
+            <p class="card-text" id="weather_overnight"></p>
+          </div>
+        </div>
       </div>
     </div>
     <div id="loading" style="margin-top: 50px; display: none">
@@ -355,29 +368,64 @@ export default {
       //}
       if (this.destination.length > 0) {
         fetch(
-          "https://weatherapi-com.p.rapidapi.com/current.json?q=" +
+          "https://community-open-weather-map.p.rapidapi.com/forecast?q=" +
             this.destination,
           {
             method: "GET",
             headers: {
-              "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
+              "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
               "x-rapidapi-key":
                 "ceff00788dmshc572d2e939e2aa1p16f562jsn6a57c668e74a",
             },
           }
         )
           .then((response) => response.json())
+
           .then((data) => {
             document.getElementById("weather_display").style.display = "flex";
             document.getElementById(
               "weather_city"
             ).innerHTML = `Weather for <b>${this.destination}</b>`;
             document.getElementById(
-              "weather"
-            ).innerHTML = `${data.current.temp_c} ℃ <br> ${data.current.temp_f} ℉ 
-                                                          <br> ${data.current.condition.text} <br> <img src="${data.current.condition.icon}"/>`;
+              "weather_morning"
+            ).innerHTML = `<b>MORNING</b><br><br><b>${Math.ceil(
+              (data.list[0].main.temp + data.list[1].main.temp) / 2 - 273.15
+            )} ℃ </b><br><b>${Math.ceil(
+              ((data.list[0].main.temp + data.list[1].main.temp) / 2 - 273.15) *
+                1.8 +
+                32
+            )} °F</b><br><br> <b>${data.list[0].weather[0].description}</b>`;
             //console.log(countr.toLowerCase() +" " +cit.toLowerCase() +" " +this.destination +" " +data.current.temp_f
             //+" " +data.current.temp_c +" " +data.current.condition.text +" " +data.current.condition.icon);
+            document.getElementById(
+              "weather_afternoon"
+            ).innerHTML = `<b>AFTERNOON</b><br><br><b>${Math.ceil(
+              (data.list[2].main.temp + data.list[3].main.temp) / 2 - 273.15
+            )} ℃ </b><br><b>${Math.ceil(
+              ((data.list[2].main.temp + data.list[3].main.temp) / 2 - 273.15) *
+                1.8 +
+                32
+            )} °F</b><br><br> <b>${data.list[2].weather[0].description}</b>`;
+
+            document.getElementById(
+              "weather_evening"
+            ).innerHTML = `<b>EVENING</b><br><br><b>${Math.ceil(
+              (data.list[4].main.temp + data.list[5].main.temp) / 2 - 273.15
+            )} ℃ </b><br><b>${Math.ceil(
+              ((data.list[4].main.temp + data.list[5].main.temp) / 2 - 273.15) *
+                1.8 +
+                32
+            )} °F</b><br><br><b>${data.list[4].weather[0].description}</b>`;
+
+            document.getElementById(
+              "weather_overnight"
+            ).innerHTML = `<b>OVERNIGHT</b><br><br><b>${Math.ceil(
+              (data.list[6].main.temp + data.list[7].main.temp) / 2 - 273.15
+            )} ℃ </b><br><b>${Math.ceil(
+              ((data.list[6].main.temp + data.list[7].main.temp) / 2 - 273.15) *
+                1.8 +
+                32
+            )} °F</b><br>   <br> <b>${data.list[6].weather[0].description}</b>`;
           })
           .catch((err) => {
             console.error(err);
