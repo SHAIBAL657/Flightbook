@@ -31,7 +31,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ~ User can easily find round trip flight information with in a budget price. <br>
 ~ User can select date of their choice. <br>
 ~ User can be informed about the destination <b>Current Weather</b> before their travel. <br>
-~ Hourly weather forecast API included.<br>
+~ <b>Hourly weather</b> forecast API included.<br>
 
 ## Preview
 
