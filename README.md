@@ -2,14 +2,14 @@
 
 ## Project setup
 ```
-npm install <br>
-npm install -g @vue/cli <br>
-npm install -g @vue/cli-service-global <br>
+npm install
+npm install -g @vue/cli
+npm install -g @vue/cli-service-global
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve <br>
+npm run serve 
 ```
 
 ### Compiles and minifies for production
@@ -19,7 +19,7 @@ npm run build
 
 ### Lints and fixes files
 ```
-npm run lint <br>
+npm run lint
 ```
 
 ### Customize configuration
