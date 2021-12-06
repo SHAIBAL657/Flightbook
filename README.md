@@ -35,4 +35,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Preview
 
-![Preview](https://i.ibb.co/4sRSh8s/Flight-Book.png)
+![Preview](https://ibb.co/7SHz3S2)
